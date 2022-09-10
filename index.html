@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Invoice</title>
+      <style media="all">
+         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+               Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+               sans-serif;
+         }
+
+         body {
+            background-color: grey;
+            /* padding: 30px; */
+         }
+
+         #container {
+            width: 55vw;
+            min-height: 100vh;
+            margin: auto;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px;
+            min-width: 900px;
+         }
+
+         heading {
+            background-color: black;
+            width: 95%;
+            height: 50px;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+         }
+
+         heading h2 {
+            letter-spacing: 5px;
+            text-transform: uppercase;
+         }
+
+         company {
+            margin-top: 30px;
+            width: 90%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 18px;
+         }
+
+         company img {
+            height: 50px;
+         }
+
+         #companyDetails {
+            margin-top: 30px;
+         }
+
+         #orderDetails div:nth-child(1) {
+            font-size: 22px;
+         }
+
+         #orderDetails td {
+            padding: 4px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+         }
+
+         #orderDetails tr td:nth-child(1) {
+            background-color: #eee;
+         }
+
+         .table {
+            flex: 1;
+            border-spacing: 4px;
+            margin: 5px;
+         }
+         .table tr td:nth-child(1) {
+            background-color: #f2f2f2;
+            width: 100px;
+         }
+
+         .table td,
+         .table th {
+            border: 1px solid #ddd;
+            padding: 4px;
+            border-radius: 2px;
+         }
+
+         .table th {
+            text-transform: uppercase;
+            font-weight: 600;
+         }
+
+         #buyerSeller {
+            width: 90%;
+            display: flex;
+            margin-top: 30px;
+            justify-content: space-between;
+         }
+
+         #shipBankDetails {
+            width: 90%;
+            display: flex;
+            margin-top: 30px;
+            justify-content: space-between;
+         }
+
+         #products {
+            margin-top: 30px;
+            width: 90%;
+         }
+
+         #products table tr th {
+            font-size: 12px;
+         }
+
+         #prodTable {
+            width: 100%;
+            margin: auto;
+            border-spacing: 0px;
+         }
+
+         #TermsConditions {
+            border-top: 1px solid black;
+            padding-top: 10px;
+            margin-top: 30px;
+            width: 90%;
+         }
+
+         #declaration {
+            border-top: 1px solid black;
+            padding-top: 10px;
+            margin-top: 30px;
+            width: 90%;
+         }
+
+         #declaration p:nth-child(1) {
+            font-size: 20px;
+            font-weight: 500;
+         }
+
+         #customerCare {
+            text-align: center;
+         }
+
+         #footer {
+            width: 90%;
+            border-top: 1px solid black;
+            padding-top: 10px;
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+         }
+      </style>
+   </head>
+   <body>
+      <div id="container">
+         <heading>
+            <h2>Invoice</h2>
+         </heading>
+         <company>
+            <div>
+               <!-- handlebar dynamic conditionals content -->
+
+               {{#if showImage}}
+               <img
+                  src="https://res.cloudinary.com/dpfoirokh/image/upload/v1658070773/HDLOGO_1_vzccdq.png"
+               />
+               {{/if}}
+
+               <!-- rendering a list by handlebar -->
+
+               
+
+               <div id="companyDetails">
+                  <p>SOLRUF</p>
+                  <p>Mumbai,</p>
+                  <p>+91-8600694140</p>
+               </div>
+            </div>
+            <table id="orderDetails">
+               <tr>
+                  <td>Invoice Number</td>
+                  <td><b>{{name}}</b></td>
+               </tr>
+               <tr>
+                  <td>Order Id</td>
+                  <td><b>{{country}}</b></td>
+               </tr>
+               <tr>
+                  <td>Issue Date</td>
+                  <td><b>{{owner}}</b></td>
+               </tr>
+            </table>
+         </company>
+
+         <div id="TermsConditions">
+            <h3>Terms and Conditions</h3>
+         </div>
+         <div id="declaration">
+            <p>Declaration</p>
+            <p>
+               We declare that this invoice shows actual price of the goods
+               described inclusive of taxes and that all particulars are true
+               and correct. In case you find Selling Price on this invoice to be
+               more than MRP mentioned on product, please inform
+               support@solruf.com
+            </p>
+            <h3 id="customerCare">SOLRUF CUSTOMER CARE: +91-8600694140</h3>
+         </div>
+         <div id="footer">
+            <p>
+               THIS IS A COMPUTER GENERATED INVOICE AND DOES NOT REQUIRE
+               SIGNATURE
+            </p>
+         </div>
+      </div>
+   </body>
+</html>

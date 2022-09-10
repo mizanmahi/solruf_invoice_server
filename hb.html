@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>HandleBar</title>
+   </head>
+   <body>
+      <div id="test"></div>
+
+      <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+      <script>
+         // compile the template
+         var template = Handlebars.compile(
+            '<h2>this is a test file for {{engine}}</h2>'
+         );
+         // execute the compiled template and print the output to the console
+         const result = template({ engine: 'hbs' });
+         console.log(result)
+
+         document.getElementById('test').innerHTML = result
+      </script>
+   </body>
+</html>
